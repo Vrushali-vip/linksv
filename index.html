@@ -184,7 +184,7 @@
                 <a href="#" class="float-btn send-btn" title="Share">
                     <i class="fas fa-share"></i>
                 </a>
-                <button class="float-btn save-btn" onclick="downloadVCard()" title="Save Contact">
+                <button class="float-btn save-btn" onclick="openVCard()" title="Save Contact">
                     <i class="fas fa-download"></i>
                 </button>
             </div>
@@ -225,37 +225,19 @@
 //         }
 
 
-function downloadVCard() {
-            const vcardData = `
-BEGIN:VCARD
+function openVCard() {
+            let vcard = `BEGIN:VCARD
 VERSION:3.0
 N:Doe;John;;;
 FN:John Doe
-ORG:Example Company
-TITLE:Software Engineer
-TEL;TYPE=WORK,VOICE:+1-555-123-4567
-TEL;TYPE=CELL,VOICE:+1-555-765-4321
-EMAIL;TYPE=WORK:john.doe@example.com
-URL:https://example.com
-ADR;TYPE=WORK:;;123 Main St;New York;NY;10001;USA
+TEL;TYPE=CELL:+1234567890
+EMAIL:john@example.com
 END:VCARD`;
 
-            // Create Blob from vCard data
-            const blob = new Blob([vcardData], { type: 'text/vcard;charset=utf-8' });
-            const url = URL.createObjectURL(blob);
-
-            // Create a temporary <a> tag and trigger the download
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = 'John_Doe.vcf';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            
-            // Clean up
-            URL.revokeObjectURL(url);
+            let blob = new Blob([vcard], { type: "text/vcard" });
+            let url = URL.createObjectURL(blob);
+            window.location.href = url;
         }
-
 
 
         // First check if the Web Share API is supported
