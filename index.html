@@ -190,14 +190,11 @@
                     <i class="fas fa-download"></i>
                 </button> -->
 
-                <!-- <button class="float-btn save-btn" onclick="saveContact()" title="Save Contact">
+                <button class="float-btn save-btn" onclick="saveContact()" title="Save Contact">
                     <i class="fas fa-download"></i>
-                </button> -->
+                </button>
 
-                <a href="intent://contacts/#Intent;action=android.intent.action.INSERT;
-S.name=Vidit%20Mehta;
-S.phone=+91%2093217%2011127;
-end">Save Contact</a>
+               
 
 
             </div>
@@ -238,43 +235,24 @@ end">Save Contact</a>
 //         }
 
 
-function saveContact() {
-            const vCardData = `BEGIN:VCARD
-VERSION:3.0
-N:Mehta;Vidit;;;
-FN:Vidit Mehta
-ORG:Fortune Five Insurance Brokers Pvt Ltd.
-TITLE:Deputy General Manager
-TEL;WORK;VOICE:+91 22 46027409
-TEL;CELL:+91 93217 11127
-EMAIL;WORK;INTERNET:vidit@fortunefive.in
-URL:https://www.linkedin.com/in/vidit-mehta-034760a/
-ADR:;;;Mumbai;;;India
-END:VCARD`;
-
-            const blob = new Blob([vCardData], { type: "text/vcard" });
-            const url = URL.createObjectURL(blob);
-
-            // Detect iOS
-            const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-
-            if (isIOS) {
-                // Open the VCF file directly (iOS automatically imports it)
-                window.location.href = url;
-            } else {
-                // Try to open the file directly in Android using an iframe
-                const iframe = document.createElement("iframe");
-                iframe.style.display = "none";
-                iframe.src = url;
-                document.body.appendChild(iframe);
-
-                // Remove iframe after a short delay
-                setTimeout(() => {
-                    iframe.remove();
-                    URL.revokeObjectURL(url);
-                }, 3000);
-            }
+async function saveContact() {
+    if ("contacts" in navigator && "select" in navigator.contacts) {
+        try {
+            const contact = {
+                name: ["Vidit Mehta"],
+                tel: ["+91 93217 11127"],
+                email: ["vidit@fortunefive.in"],
+                organization: ["Fortune Five Insurance Brokers Pvt Ltd."]
+            };
+            await navigator.contacts.save([contact]);
+        } catch (error) {
+            console.error("Contact saving failed:", error);
         }
+    } else {
+        alert("Your browser does not support direct contact saving.");
+    }
+}
+
 
 
 
