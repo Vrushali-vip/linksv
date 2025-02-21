@@ -184,9 +184,14 @@
                 <a href="#" class="float-btn send-btn" title="Share">
                     <i class="fas fa-share"></i>
                 </a>
-                <button class="float-btn save-btn" onclick="openVCard()" title="Save Contact">
+                <!-- <button class="float-btn save-btn" onclick="openVCard()" title="Save Contact">
                     <i class="fas fa-download"></i>
-                </button>
+                </button> -->
+
+                <a href="intent://contacts?action=add&name=John%20Doe&phone=+1234567890&email=john@example.com#Intent;scheme=content;package=com.android.contacts;end;">
+                    <button>Save Contact</button>
+                </a>
+                
             </div>
         </div>
     </section>
@@ -225,19 +230,6 @@
 //         }
 
 
-function openVCard() {
-            let vcard = `BEGIN:VCARD
-VERSION:3.0
-N:Doe;John;;;
-FN:John Doe
-TEL;TYPE=CELL:+1234567890
-EMAIL:john@example.com
-END:VCARD`;
-
-            let blob = new Blob([vcard], { type: "text/vcard" });
-            let url = URL.createObjectURL(blob);
-            window.location.href = url;
-        }
 
 
         // First check if the Web Share API is supported
