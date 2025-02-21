@@ -1,0 +1,576 @@
+/* 
+.hero.has-background {
+    position: relative;
+    background: url('logoo.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-attachment: fixed;
+}
+
+
+.logo-container {
+    width: 150px !important;
+    height: 150px !important;
+    margin: 0 auto;
+}
+
+.company-logo {
+    max-width: 100%;
+    height: auto;
+}
+
+.link-item.card {
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+                box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+                background-color 0.3s ease;
+    overflow: hidden;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.link-item.card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    background-color: #f8f9fa;
+}
+
+.link-item .card-content {
+    padding: 1.5rem;
+}
+
+.more-icon {
+    cursor: pointer;
+    color: #666;
+}
+
+.social-button {
+    margin: 0 0.3rem;
+    transition: all 0.3s !important;
+}
+
+.social-button:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+}
+
+.whatsapp-color {
+    background-color: #25D366 !important;
+    color: white !important;
+}
+
+.facebook-color {
+    background-color: #1877F2 !important;
+    color: white !important;
+}
+
+.twitter-color {
+    background-color: #1DA1F2 !important;
+    color: white !important;
+}
+
+.gmail-color {
+    background-color: #D14836 !important;
+    color: white !important;
+}
+
+.linkedin-color {
+    background-color: #0077B5 !important;
+    color: white !important;
+}
+
+.instagram-color {
+    background-color: #E4405F !important;
+    color: white !important;
+}
+
+.website-card {
+    background-color: #128bdc;
+    color: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.website-card.website-bg {
+    background-color: #128bdc;
+}
+
+.website-card.corporate-bg {
+    background-color: #2ecc71;
+}
+
+.website-card.flavours-bg {
+    background-color: #f1c40f;
+}
+
+.website-card.brochure-bg {
+    background-color: #421a83;
+}
+
+.website-card.locate-bg {
+    background-color: #5fa700;
+}
+
+.website-card img {
+    background-color: white;
+    border-radius: 50%;
+    padding: 0.5rem;
+}
+
+.copy-notification {
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    display: none;
+    animation: fadeInOut 2s ease-in-out;
+}
+
+.copy-notification.show {
+    display: block;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.links-container {
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+    .hero.has-background {
+        background-size: 200%;
+        background-position: top center;
+        background-attachment: scroll;
+    }
+    
+    .logo-container {
+        width: 120px !important;
+        height: 120px !important;
+    }
+    
+    .company-name {
+        font-size: 1.75rem !important;
+    }
+    
+    .company-description {
+        font-size: 1.15rem !important;
+        padding: 0 1rem;
+    }
+    
+    .link-item .title.is-4 {
+        font-size: 1.2rem;
+    }
+    
+    .social-button {
+        padding: 0.5rem !important;
+    }
+}
+
+
+.hero.has-background {
+    position: relative;
+    background: linear-gradient(45deg, rgba(18, 139, 220, 0.1), rgba(66, 26, 131, 0.1), rgba(95, 167, 0, 0.1));
+    background-size: 400% 400%;
+    animation: gradientBackground 15s ease infinite;
+}
+
+.hero.has-background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('logoo.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-attachment: fixed;
+    opacity: 0.3;
+    z-index: -1;
+    animation: pulseBackground 5s ease-in-out infinite;
+}
+
+.hero .hero-body .container {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    animation: fadeIn 1s ease-out;
+}
+
+.logo-container {
+    width: 150px !important;
+    height: 150px !important;
+    margin: 0 auto;
+    position: relative;
+    animation: floatLogo 6s ease-in-out infinite;
+}
+
+.company-logo {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2));
+}
+
+.link-item.card {
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+                box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+                background-color 0.3s ease;
+    overflow: hidden;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    animation: slideInUp 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
+    animation-delay: calc(var(--card-index, 0) * 0.15s);
+}
+
+.link-item.card:nth-child(1) { --card-index: 1; }
+.link-item.card:nth-child(2) { --card-index: 2; }
+.link-item.card:nth-child(3) { --card-index: 3; }
+
+.link-item.card:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), 0 0 20px rgba(18, 139, 220, 0.3);
+    background-color: white;
+}
+
+.link-item.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.6),
+        transparent
+    );
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.link-item.card:hover::before {
+    left: 100%;
+    transition: 0.5s;
+}
+
+.link-item .card-content {
+    padding: 1.5rem;
+}
+
+.more-icon {
+    cursor: pointer;
+    color: #666;
+    transition: transform 0.3s ease;
+}
+
+.more-icon:hover {
+    transform: rotate(90deg);
+}
+
+.social-button {
+    margin: 0 0.3rem;
+    transition: all 0.3s !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(100%);
+    transition: transform 0.3s ease-out;
+    z-index: -1;
+}
+
+.social-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.social-button:hover::before {
+    transform: translateY(0);
+}
+
+.whatsapp-color {
+    background: linear-gradient(135deg, #25D366, #128C7E) !important;
+    color: white !important;
+}
+
+.facebook-color {
+    background: linear-gradient(135deg, #1877F2, #3b5998) !important;
+    color: white !important;
+}
+
+.twitter-color {
+    background: linear-gradient(135deg, #1DA1F2, #0C85D0) !important;
+    color: white !important;
+}
+
+.gmail-color {
+    background: linear-gradient(135deg, #D14836, #B23121) !important;
+    color: white !important;
+}
+
+.linkedin-color {
+    background: linear-gradient(135deg, #0077B5, #005885) !important;
+    color: white !important;
+}
+
+.instagram-color {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888) !important;
+    color: white !important;
+}
+
+.modal-card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    overflow: hidden;
+    animation: scaleIn 0.3s ease-out;
+}
+
+.modal-card-head, .modal-card-foot {
+    background: rgba(240, 240, 240, 0.7);
+    border-color: rgba(200, 200, 200, 0.3);
+}
+
+.website-card {
+    background: linear-gradient(135deg, #128bdc, #1065a3);
+    color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    transition: background 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.website-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.website-card.website-bg {
+    background: linear-gradient(135deg, #128bdc, #0e6dad);
+}
+
+.website-card.corporate-bg {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+}
+
+.website-card.flavours-bg {
+    background: linear-gradient(135deg, #f1c40f, #e67e22);
+}
+
+.website-card.brochure-bg {
+    background: linear-gradient(135deg, #421a83, #311558);
+}
+
+.website-card.locate-bg {
+    background: linear-gradient(135deg, #5fa700, #457b00);
+}
+
+.website-card img {
+    background-color: white;
+    border-radius: 50%;
+    padding: 0.5rem;
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.2));
+    transition: transform 0.3s ease;
+}
+
+.website-card:hover img {
+    transform: rotate(10deg);
+}
+
+.copy-notification {
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    display: none;
+    animation: fadeInOut 2s ease-in-out;
+    background: rgba(47, 133, 90, 0.9);
+    backdrop-filter: blur(5px);
+    color: white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.copy-notification.show {
+    display: block;
+}
+
+.links-container {
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+@keyframes gradientBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes pulseBackground {
+    0% { opacity: 0.2; }
+    50% { opacity: 0.4; }
+    100% { opacity: 0.2; }
+}
+
+@keyframes floatLogo {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInUp {
+    0% { transform: translateY(50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translate(-50%, 20px); }
+    20% { opacity: 1; transform: translate(-50%, 0); }
+    80% { opacity: 1; transform: translate(-50%, 0); }
+    100% { opacity: 0; transform: translate(-50%, -20px); }
+}
+
+@media screen and (max-width: 768px) {
+    .hero.has-background {
+        background-size: 200%;
+        background-position: top center;
+        background-attachment: scroll;
+    }
+    
+    .hero .hero-body .container {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+    
+    .logo-container {
+        width: 120px !important;
+        height: 120px !important;
+    }
+    
+    .company-name {
+        font-size: 1.75rem !important;
+    }
+    
+    .company-description {
+        font-size: 1.15rem !important;
+        padding: 0 1rem;
+    }
+    
+    .link-item .title.is-4 {
+        font-size: 1.2rem;
+    }
+    
+    .social-button {
+        padding: 0.5rem !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logo-container {
+        width: 100px !important;
+        height: 100px !important;
+    }
+    
+    .company-name {
+        font-size: 1.5rem !important;
+    }
+    
+    .company-description {
+        font-size: 1rem !important;
+    }
+    
+    .link-item .media-left .image {
+        width: 32px !important;
+        height: 32px !important;
+    }
+    
+    .social-button {
+        margin: 0 0.2rem;
+    }
+    
+    .buttons.is-centered {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .modal-card-body {
+        padding: 1rem;
+    }
+}
+@media screen and (max-width: 480px) {
+    .logo-container {
+        width: 100px !important;
+        height: 100px !important;
+    }
+    
+    .company-name {
+        font-size: 1.5rem !important;
+    }
+    
+    .company-description {
+        font-size: 1rem !important;
+    }
+    
+    .link-item .media-left .image {
+        width: 32px !important;
+        height: 32px !important;
+    }
+    
+    .social-button {
+        margin: 0 0.2rem;
+    }
+    
+    .buttons.is-centered {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .modal-card-body {
+        padding: 1rem;
+    }
+} */
+
+
+/* Custom styles to enhance Bulma framework */
