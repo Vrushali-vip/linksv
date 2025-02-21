@@ -188,9 +188,14 @@
                     <i class="fas fa-download"></i>
                 </button> -->
 
-                <a href="intent://contacts?action=add&name=John%20Doe&phone=+1234567890&email=john@example.com#Intent;scheme=content;package=com.android.contacts;end;">
+                <!-- <a href="intent://contacts?action=add&name=John%20Doe&phone=+1234567890&email=john@example.com#Intent;scheme=content;package=com.android.contacts;end;">
                     <button>Save Contact</button>
-                </a>
+                </a> -->
+
+                <img id="qrCode" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=BEGIN:VCARD%0AVERSION:3.0%0AFN:John%20Doe%0ATEL:+1234567890%0AEMAIL:john@example.com%0AEND:VCARD" />
+
+                <button onclick="saveContactWithQR()">Save Contact</button>
+
                 
             </div>
         </div>
@@ -229,6 +234,21 @@
 //             document.body.removeChild(link);
 //         }
 
+
+function saveContactWithQR() {
+    // Generate vCard QR Code URL
+    const qrURL = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=BEGIN:VCARD%0AVERSION:3.0%0AFN:John%20Doe%0ATEL:+1234567890%0AEMAIL:john@example.com%0AEND:VCARD";
+
+    // Create an invisible iframe
+    const iframe = document.createElement("iframe");
+    iframe.style.display = "none";
+    iframe.src = qrURL;
+
+    document.body.appendChild(iframe);
+
+    // Remove iframe after 5 seconds
+    setTimeout(() => document.body.removeChild(iframe), 5000);
+}
 
 
 
