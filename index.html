@@ -192,10 +192,7 @@
                     <button>Save Contact</button>
                 </a> -->
 
-                <img id="qrCode" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=BEGIN:VCARD%0AVERSION:3.0%0AFN:John%20Doe%0ATEL:+1234567890%0AEMAIL:john@example.com%0AEND:VCARD" />
-
-                <button onclick="saveContactWithQR()">Save Contact</button>
-
+                <button onclick="downloadVCard()">Save Contact (iOS/Android)</button>
                 
             </div>
         </div>
@@ -234,22 +231,24 @@
 //             document.body.removeChild(link);
 //         }
 
+function downloadVCard() {
+    const vCardData = `BEGIN:VCARD
+VERSION:3.0
+FN:John Doe
+TEL:+1234567890
+EMAIL:john@example.com
+END:VCARD`;
 
-function saveContactWithQR() {
-    // Generate vCard QR Code URL
-    const qrURL = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=BEGIN:VCARD%0AVERSION:3.0%0AFN:John%20Doe%0ATEL:+1234567890%0AEMAIL:john@example.com%0AEND:VCARD";
+    const blob = new Blob([vCardData], { type: "text/vcard" });
+    const url = window.URL.createObjectURL(blob);
 
-    // Create an invisible iframe
-    const iframe = document.createElement("iframe");
-    iframe.style.display = "none";
-    iframe.src = qrURL;
-
-    document.body.appendChild(iframe);
-
-    // Remove iframe after 5 seconds
-    setTimeout(() => document.body.removeChild(iframe), 5000);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "contact.vcf";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
 }
-
 
 
         // First check if the Web Share API is supported
