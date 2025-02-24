@@ -290,10 +290,9 @@ body {
     transform: rotate(360deg);
 } */
 /* Email Icon */
-.link-item[href*="mailto:"] .icon-container {
-    background: linear-gradient(135deg, #ffc107, #ff9800);
+.link-item[href^="mailto:"] .icon-container {
+    background: linear-gradient(135deg, #ffc107, #ff9800); /* Yellow-Orange */
 }
-
 /* Phone Call Icon */
 .link-item[href*="tel:+919321711127"] .icon-container {
     background: linear-gradient(135deg, #9400D3, #8A2BE2);
@@ -314,7 +313,13 @@ body {
     background: linear-gradient(135deg, #25D366, #128C7E);
 }
 
+.link-item[href*="fortunefive.in"] .icon-container {
+    background: linear-gradient(135deg, #1E90FF, #007AFF); /* Blue */
+}
 
+.link-item[href*="brochure"] .icon-container {
+    background: linear-gradient(135deg, #FF0000, #B22222); /* Red Gradient for PDF */
+}
 .link-item .icon {
     font-size: 1.2rem;
     color: white;
@@ -388,7 +393,6 @@ body {
 }
 
 .google-map {
-    margin-top: 1.5rem;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -550,6 +554,24 @@ button:focus {
 }
   
   
+.logo-small {
+    width: 250px;  
+    height: auto;  
+}
+
+.locate-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+.locate-title i {
+    margin-right: 8px;
+}
+
+
 /* Animation keyframes */
 @keyframes pulse {
     0% {
